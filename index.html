@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <img src="img\логотип сайта тест.svg" alt="логотип" class="logo-test">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesta test server®</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="myButton">
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#" class="menu">Главная</a></li>
+                    <li><a href="index1Игры.html">Игры</a></li>
+                    <li><a href="index2Турниры.html">Турниры</a></li>
+                    <li><a href="index3События.html">События</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="bonuses">
+        <section class="bonus">
+            <h2>Плюс бонус, плюс СУ-122</h2>
+            <p>Что-то новенькое!</p>
+            <a href="index3События.html#bonus">
+                <img src="img\сушка 122 для 1 страницы.jpg" alt="СУ-122" class="glavnai">
+            </a>
+        </section>
+        <section class="bonus">
+            <h2>Челлендж «Вызов принят!»</h2>
+            <p>Время дамажить</p>
+            <a href="index3События.html#challenge">
+                <img src="img\для челенжа вызов принят.jpg" alt="Челлендж" class="glavnai">
+            </a>
+        </section>
+        <section class="bonus" >
+            <h2>Обновление 11.8</h2>
+            <p>Что нового?</p>
+            <a href="index3События.html#obnova">
+                <img src="img\Обновление.jpg" alt="Обновление 11.8" class="glavnai">
+            </a>
+        </section></div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="legal">
+                <a href="https://www.donationalerts.com/r/abobases" class="prosto-button">Поддержать автора→</a>
+            </div>
+            <div class="social">
+                <a href="#">Вконтакте</a>
+                <a href="">Telegram</a>
+                <a href="https://www.youtube.com/">YouTube</a>
+                <a href="https://rutube.ru/video/466b157c47b1cb85527f321ae41e7320/?r=plemwd">Смотреть UFC бои</a>
+                <a href="https://legal.lesta.ru/privacy-policy/">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+     <script>
+        const bonusSections = document.querySelectorAll('.bonus');
+
+        bonusSections.forEach(section => {
+            section.addEventListener('mouseover', function() {
+                section.style.transform = 'scale(0.8)';
+                section.style.transition = 'transform 0.3s ease';
+            });
+
+            section.addEventListener('mouseout', function() {
+                section.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+<video id="myVideo" width="320" height="180" controls style="display: none;">
+    <source src="img\20070515 - RickRollD - oHg5SJYRHA0.mp4" type="video/mp4">
+    Ваш браузер не поддерживает видео.
+</video>
+
+<footer>
+    <!-- Содержимое футера -->
+</footer>
+
+<button id="toggleFullscreen">.</button>
+
+</style>
+
+<script>
+    const video = document.getElementById('myVideo');
+    const button = document.getElementById('toggleFullscreen');
+    let clickCount = 0;
+    function goFullscreen() {
+        const requestFullscreen = video.requestFullscreen || 
+            video.webkitRequestFullscreen || 
+            video.mozRequestFullscreen || 
+            video.msRequestFullscreen;
+
+        requestFullscreen.call(video).catch(err => {
+            console.log("Ошибка при переходе в полноэкранный режим:", err);
+        });
+    }
+    document.addEventListener('webkitfullscreenchange', exitHandler, false);
+    document.addEventListener('mozfullscreenchange', exitHandler, false);
+    document.addEventListener('fullscreenchange', exitHandler, false);
+    document.addEventListener('MSFullscreenChange', exitHandler, false);
+
+    function exitHandler() {
+        if (!document.fullscreenElement && 
+            !document.webkitIsFullScreen && 
+            !document.mozFullScreen && 
+            !document.msFullscreenElement) {
+            video.style.display = 'none';
+            video.pause();
+            button.textContent = '   ';
+            button.disabled = false;
+        }
+    }
+
+    button.addEventListener('click', function() {
+        clickCount++;
+
+        if (clickCount === 5) {
+            video.style.display = 'block';
+            video.play();
+            goFullscreen();
+        }
+    });
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <img src="img\логотип сайта тест.svg" alt="логотип" class="logo-test">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesta test server®</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="" class="menu">Игры</a></li>
+                <li><a href="index2Турниры.html">Турниры</a></li>
+                <li><a href="index3События.html">События</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="promo-banner">
+        <div class="game-section">
+            <img src="img\Мир танков новое лого.jpg" alt="User Image" class="user-image">
+            <h3>Мир Танков</h3>
+        </div>
+        <div class="game-section">
+            <img src="img\e4a5c8_no_logo_no_text.jpg" alt="User Image" class="user-image">
+            <h3>Мир Кораблей</h3>
+        </div>
+        <div class="game-section">
+            <img src="img\ddwsE2Vq95w.jpg" alt="User Image" class="user-image">
+            <h3>Tanks Blitz</h3>
+        </div>
+    </section>
+    <section>
+        <a href="https://redirect.lesta.ru/LGC/Lesta_Game_Center_Install_RU.exe" class="download-button">СКАЧАТЬ LESTA GAME CENTER</a>
+    </section>
+</main>
+    <main>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="legal">
+                <a href="https://www.donationalerts.com/r/abobases" class="prosto-button">Поддержать автора→</a>
+            </div>
+            <div class="social">
+                <a href="#">Вконтакте</a>
+                <a href="">Telegram</a>
+                <a href="https://www.youtube.com/">YouTube</a>
+                <a href="https://rutube.ru/video/466b157c47b1cb85527f321ae41e7320/?r=plemwd">Смотреть UFC бои</a>
+                <a href="https://legal.lesta.ru/privacy-policy/">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.user-image');
+        const downloadButton = document.querySelector('.download-button');
+
+        images.forEach(image => {
+            image.addEventListener('mouseover', function() {
+                image.style.transform = 'scale(1.1)';
+                image.style.transition = 'transform 0.3s ease';
+            });
+
+            image.addEventListener('mouseout', function() {
+                image.style.transform = 'scale(1)';
+            });
+        });
+
+        downloadButton.addEventListener('mouseover', function() {
+            downloadButton.style.transform = 'scale(0.9)';
+            downloadButton.style.transition = 'transform 0.3s ease';
+        });
+
+        downloadButton.addEventListener('mouseout', function() {
+            downloadButton.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>
+
